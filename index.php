@@ -150,7 +150,7 @@ if ($_POST) {
 						}
 						sort($files);
 						foreach ($files as $file) {
-							if ($file != '.' && $file != '..') {
+							if ($file != '.' && $file != '..' && pathinfo($file)['extension'] != 'md' ) {
 					?>
 					<option value="prod-certificates/<?php echo $file ?>" <?php if(isset($cert) && $cert == "prod-certificates/$file") echo 'selected'; ?>><?php echo $file ?></option>
 					<?php } } ?>
@@ -164,7 +164,7 @@ if ($_POST) {
 						}
 						sort($files2);
 						foreach ($files2 as $file) {
-							if ($file != '.' && $file != '..') {
+							if ($file != '.' && $file != '..' && pathinfo($file)['extension'] != 'md') {
 					?>
 					<option value="sandbox-certificates/<?php echo $file ?>" <?php if(isset($cert) && $cert == "sandbox-certificates/$file") echo 'selected'; ?>><?php echo $file ?></option>
 					<?php } } ?>
